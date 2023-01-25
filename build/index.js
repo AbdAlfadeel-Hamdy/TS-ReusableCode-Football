@@ -12,4 +12,11 @@ const matches = fs_1.default
     .map((match) => {
     return match.split(",");
 });
-console.log(matches);
+let unitedWins = 0;
+for (const match of matches) {
+    if (match[1] === "Man United" && match[5] === "H")
+        unitedWins++;
+    if (match[2] === "Man United" && match[5] === "A")
+        unitedWins++;
+}
+console.log(`Man United won ${unitedWins} games`);
