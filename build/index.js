@@ -12,11 +12,17 @@ const matches = fs_1.default
     .map((match) => {
     return match.split(",");
 });
+var MatchResult;
+(function (MatchResult) {
+    MatchResult["HomeWin"] = "H";
+    MatchResult["AwayWin"] = "A";
+    MatchResult["Draw"] = "D";
+})(MatchResult || (MatchResult = {}));
 let unitedWins = 0;
 for (const match of matches) {
-    if (match[1] === "Man United" && match[5] === "H")
+    if (match[1] === "Man United" && match[5] === MatchResult.HomeWin)
         unitedWins++;
-    if (match[2] === "Man United" && match[5] === "A")
+    if (match[2] === "Man United" && match[5] === MatchResult.AwayWin)
         unitedWins++;
 }
 console.log(`Man United won ${unitedWins} games`);
