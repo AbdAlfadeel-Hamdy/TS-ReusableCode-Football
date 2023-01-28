@@ -5,8 +5,9 @@ import { ConsoleReport } from "./reportTargets/ConsoleReport";
 import { HtmlReport } from "./reportTargets/HtmlReport";
 import { Summary } from "./Summary";
 
-const csvFileReader = new CsvFileReader("3.1 football.csv.csv");
-const matchReader = new MatchReader(csvFileReader);
+// const csvFileReader = new CsvFileReader("3.1 football.csv.csv");
+// const matchReader = new MatchReader(csvFileReader);
+const matchReader = MatchReader.fromCsv("3.1 football.csv.csv");
 matchReader.load();
 
 const summaryLiverpool = new Summary(
